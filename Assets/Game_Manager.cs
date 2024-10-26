@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using TMPro.Examples;
+using System.Threading;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class Game_Manager : MonoBehaviour
     [SerializeField] public TextMeshProUGUI ScorePoint;
     [SerializeField] public float coalpoint;
     [SerializeField] public Collider2D Collider;
-    [SerializeField] public GameObject Coal;
+
+   
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,6 @@ public class Game_Manager : MonoBehaviour
     {
         Movement();
         Score();
-        CoalSpawner()
     }
 
     void Movement()
@@ -52,8 +53,8 @@ public class Game_Manager : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         coalpoint+=1;
-        Destroy(other.gameObject);
+        Destroy(gameObject);
     }
 
-    CoalSpawner
+   
 }
