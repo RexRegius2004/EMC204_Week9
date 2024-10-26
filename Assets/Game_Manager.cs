@@ -50,11 +50,14 @@ public class Game_Manager : MonoBehaviour
     {
         ScorePoint.text = coalpoint.ToString();
     }
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        coalpoint+=1;
-        Destroy(gameObject);
+        if (collision.gameObject.tag == "Coal")
+        {
+            Destroy(gameObject);
+            Debug.Log("Coal Collected");
+        }
     }
 
-   
+
 }
